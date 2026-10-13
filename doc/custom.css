@@ -1,0 +1,75 @@
+/* ENDESGA 32 by ENDESGA — https://lospec.com/palette-list/endesga-32
+ * Wiki v1.3.0 public tokens. Named colors are exact palette entries.
+ */
+:root {
+  color-scheme: dark;
+  --edg-night: #181425;
+  --edg-navy: #262b44;
+  --edg-slate: #3a4466;
+  --edg-steel: #5a6988;
+  --edg-gray: #8b9bb4;
+  --edg-silver: #c0cbdc;
+  --edg-white: #ffffff;
+  --edg-amber: #feae34;
+  --edg-yellow: #fee761;
+  --edg-orange: #f77622;
+  --edg-green: #63c74d;
+  --edg-cyan: #2ce8f5;
+  --edg-blue: #0099db;
+  --edg-pink: #f6757a;
+  --edg-magenta: #b55088;
+
+  --bg: var(--edg-night);
+  --surface: var(--edg-navy);
+  --surface-raised: var(--edg-slate);
+  --border: var(--edg-slate);
+  --border-strong: var(--edg-steel);
+  --text: var(--edg-white);
+  --prose-text: var(--edg-silver);
+  --muted: var(--edg-silver);
+  --faint: var(--edg-gray);
+  --accent: var(--edg-amber);
+  --accent-ink: var(--edg-night);
+  --secondary: var(--edg-cyan);
+  --danger: var(--edg-pink);
+  --warning: var(--edg-yellow);
+  --evidence: var(--edg-pink);
+  --focus-ring: var(--edg-cyan);
+  --selection-bg: var(--edg-cyan);
+  --selection-text: var(--edg-night);
+  --backdrop: color-mix(in srgb, var(--edg-night) 90%, transparent);
+  --sidebar-shadow: color-mix(in srgb, var(--edg-night) 70%, transparent);
+
+  --syntax-bg: var(--surface);
+  --syntax-text: var(--edg-silver);
+  --syntax-keyword: var(--edg-pink);
+  --syntax-title: var(--edg-yellow);
+  --syntax-literal: var(--edg-cyan);
+  --syntax-string: var(--edg-green);
+  --syntax-symbol: var(--edg-amber);
+  --syntax-tag: var(--edg-pink);
+  --syntax-comment: var(--edg-gray);
+  --syntax-section: var(--edg-cyan);
+  --syntax-bullet: var(--edg-yellow);
+  --syntax-addition-text: var(--edg-green);
+  --syntax-addition-bg: color-mix(in srgb, var(--edg-green) 10%, var(--surface));
+  --syntax-deletion-text: var(--edg-pink);
+  --syntax-deletion-bg: color-mix(in srgb, var(--edg-pink) 10%, var(--surface));
+
+  /* Diagrams inherit UI tokens. Categorical charts use this palette.
+   * Blue/magenta/orange are graphical accents, not small-text colors.
+   */
+  --chart-1: var(--edg-amber);
+  --chart-2: var(--edg-cyan);
+  --chart-3: var(--edg-green);
+  --chart-4: var(--edg-pink);
+  --chart-5: var(--edg-blue);
+  --chart-6: var(--edg-yellow);
+  --chart-7: var(--edg-magenta);
+  --chart-8: var(--edg-orange);
+}
+
+/* Content layout only; all theme colors use public tokens above. */
+.prose td { vertical-align: top; overflow-wrap: anywhere; }
+.prose td:first-child { min-width: 9rem; }
+.prose td:last-child { min-width: 5rem; }
