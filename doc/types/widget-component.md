@@ -5,11 +5,11 @@ status: draft
 
 # WidgetComponent
 
-`WidgetComponent` is a general component node with the props defined on its component page. It is not an arbitrary renderable value, raw string, framework element, or configuration object. Text content is represented by Text, Caption, Title, Label, or Markdown nodes.
+`WidgetComponent` is a general component node with the props defined on its component page. It is not an arbitrary renderable value, raw string, interpreter-specific element, or configuration object. Text content is represented by Text, Caption, Title, Label, or Markdown nodes.
 
 The general component union is:
 
-```ts
+```
 type WidgetComponent =
   | Badge | Basic | Box | Button | Caption | Card | CardCarousel
   | CardLinkItem | Chart | Checkbox | Col | DatePicker | Divider
@@ -22,7 +22,9 @@ type WidgetComponent =
 
 [[components/badge|Badge]] · [[components/basic|Basic]] · [[components/box|Box]] · [[components/button|Button]] · [[components/caption|Caption]] · [[components/card|Card]] · [[components/cardcarousel|CardCarousel]] · [[components/cardlinkitem|CardLinkItem]] · [[components/chart|Chart]] · [[components/checkbox|Checkbox]] · [[components/col|Col]] · [[components/datepicker|DatePicker]] · [[components/divider|Divider]] · [[components/favicon|Favicon]] · [[components/form|Form]] · [[components/grid|Grid]] · [[components/icon|Icon]] · [[components/iframe|IFrame]] · [[components/image|Image]] · [[components/input|Input]] · [[components/label|Label]] · [[components/listview|ListView]] · [[components/markdown|Markdown]] · [[components/radiogroup|RadioGroup]] · [[components/row|Row]] · [[components/select|Select]] · [[components/spacer|Spacer]] · [[components/table|Table]] · [[components/text|Text]] · [[components/textarea|Textarea]] · [[components/title|Title]] · [[components/transition|Transition]]
 
-These names denote component node types, not renderer classes. The full serialization schema is not yet defined. JSON nodes may carry `id` and `type`; their requiredness remains unresolved. `key` is reconciliation metadata, not an ordinary component prop.
+These names denote component node types, not renderer classes. This specification defines component interfaces, not a serialization format; no serialized `type` discriminator or envelope is prescribed.
+
+Every component, including parent-owned rows, cells, and items, accepts an optional string `id` for caller-defined tracking. It defaults to `""`, meaning no tracking identifier. Supplying `id` does not change layout, content, or child-slot rules and has no implicit rendering behavior. Callers should choose distinct IDs within the scope they track.
 
 - `WidgetComponent` accepts exactly one general component node, as used by Transition.
 - `WidgetComponent[]` accepts an array of general component nodes. Omission depends on the prop's Optional column; an array is not shorthand for a single node.

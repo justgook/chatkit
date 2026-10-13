@@ -11,7 +11,7 @@ Tabular layout for column-aligned data, with support for header rows and cell sp
 
 ## Usage
 
-```tsx
+```
 <Table>
   <Table.Row header>
     <Table.Cell><Text value="Item" size="sm" /></Table.Cell>
@@ -40,6 +40,7 @@ Tabular layout for column-aligned data, with support for header rows and cell sp
 
 | Name | Optional | Type / values | Default | Description |
 | --- | --- | --- | --- | --- |
+| `id` | yes | `string` | `""` | Optional identifier for caller-defined tracking. |
 | `children` | yes | [[components/table#table-row-props|TableRow]]`[]` | `[]` | Rows within this table. |
 
 ## Composition
@@ -50,6 +51,7 @@ Tabular layout for column-aligned data, with support for header rows and cell sp
 
 | Name | Optional | Type / values | Default | Description |
 | --- | --- | --- | --- | --- |
+| `id` | yes | `string` | `""` | Optional identifier for caller-defined tracking. |
 | `children` | yes | [[components/table#table-cell-props|TableCell]]`[]` | `[]` | Cells within this row. |
 | `header` | yes | `boolean` | `false` | Render this row using table header cells. |
 
@@ -57,11 +59,12 @@ Tabular layout for column-aligned data, with support for header rows and cell sp
 
 | Name | Optional | Type / values | Default | Description |
 | --- | --- | --- | --- | --- |
+| `id` | yes | `string` | `""` | Optional identifier for caller-defined tracking. |
 | `children` | yes | [[types/widget-component|WidgetComponent]]`[]` | `[]` | Component content within this cell. |
-| `width` | yes | `string \| number` | `0` | Explicit width for the cell; accepts a numeric pixel value or a CSS string. |
-| `padding` | yes | `string \| number \| `[[types/padding|Padding]] | `0` | Inner spacing for cell content; accepts a spacing unit, CSS string, or padding object. |
+| `width` | yes | `string \| number` | `0` | Explicit width for the cell; accepts a numeric size or an interpreter-defined size expression. |
+| `padding` | yes | `number \| number[4]` | `0` | Inner spacing; one number applies to all sides, or four numbers specify top, right, bottom, left. |
 | `colSpan` | yes | `number` | `0` | Number of columns this cell spans. |
 | `rowSpan` | yes | `number` | `0` | Number of rows this cell spans. |
-| `align` | yes | `"start" \| "center" \| "end"` | `"start"` | Horizontal alignment for cell content; matches the CSS `text-align` initial value. |
-| `vAlign` | yes | `"start" \| "center" \| "end" \| "baseline"` | `"baseline"` | Vertical alignment for cell content; matches the CSS `vertical-align` initial value. `start`, `center`, and `end` correspond to top, middle, and bottom. |
+| `align` | yes | `"start" \| "center" \| "end"` | `"start"` | Horizontal alignment for cell content. |
+| `vAlign` | yes | `"start" \| "center" \| "end" \| "baseline"` | `"baseline"` | Vertical alignment for cell content. `start`, `center`, and `end` correspond to top, middle, and bottom. |
 | `colSize` | yes | `"sm" \| "md" \| "lg" \| "xs" \| "xl"` | `"md"` | Size hint used when distributing column widths. |

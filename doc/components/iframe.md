@@ -9,6 +9,7 @@ Reserved interface with height and flush controls. Embedded-document behavior is
 
 | Name | Optional | Type / values | Default | Description |
 | --- | --- | --- | --- | --- |
+| `id` | yes | `string` | `""` | Optional identifier for caller-defined tracking. |
 | `height` | yes | `number \| string` | `0` | Height constraint. |
 | `flush` | yes | `boolean` | `false` | Flush layout treatment. |
 

@@ -11,7 +11,7 @@ Trigger actions with configurable style, size, and icons.
 
 ## Usage
 
-```tsx
+```
 <Button label="Submit" color="accent" />
 ```
 
@@ -19,6 +19,7 @@ Trigger actions with configurable style, size, and icons.
 
 | Name | Optional | Type / values | Default | Description |
 | --- | --- | --- | --- | --- |
+| `id` | yes | `string` | `""` | Optional identifier for caller-defined tracking. |
 | `submit` | yes | `boolean` | `false` | Configure the button as a submit button for the nearest form. |
 | `label` | yes | `string` | `""` | Text to display inside the button. |
 | `onClickAction` | yes | [[types/action-config|ActionConfig]] | `null` | Action dispatched on click. |
@@ -26,7 +27,7 @@ Trigger actions with configurable style, size, and icons.
 | `iconEnd` | yes | [[types/widget-icon|WidgetIcon]] | `null` | Optional icon shown after the label. |
 | `style` | yes | `"secondary" \| "primary"` | `"primary"` | Convenience preset for button style. |
 | `iconSize` | yes | `"sm" \| "md" \| "lg" \| "xl" \| "2xl"` | `"md"` | Size of the button icons. |
-| `color` | yes | `"neutral" \| "accent" \| "success" \| "warning" \| "danger" \| "info"` | `"accent"` | Semantic intent, not a literal color; the renderer selects colors appropriate to this component. |
+| `color` | yes | `"neutral" \| "accent" \| "success" \| "warning" \| "danger" \| "info" \| "discovery" \| "primary" \| "secondary"` | `"accent"` | Semantic intent, not a literal color; the renderer selects colors appropriate to this component. |
 | `variant` | yes | `"solid" \| "soft" \| "outline" \| "ghost"` | `"solid"` | Visual variant of the button; accepts a control variant token. |
 | `size` | yes | `"sm" \| "md" \| "lg" \| "2xs" \| "xs" \| "xl" \| "2xl" \| "3xl" \| "3xs"` | `"lg"` | Controls the overall size of the button. |
 | `pill` | yes | `boolean` | `true` | Determines if the button should be a fully rounded pill shape. |

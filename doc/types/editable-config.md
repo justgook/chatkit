@@ -7,7 +7,7 @@ status: draft
 
 Used by Text's `editable` prop, alongside `false`:
 
-```ts
+```
 {
   name: string;
   placeholder?: string;

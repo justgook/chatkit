@@ -11,7 +11,7 @@ Select a date from a calendar popover.
 
 ## Usage
 
-```tsx
+```
 <DatePicker name="birthday" placeholder="YYYY-MM-DD" />
 ```
 
@@ -21,6 +21,7 @@ This is a leaf component: `children` is not accepted. See [[types/widget-compone
 
 | Name | Optional | Type / values | Default | Description |
 | --- | --- | --- | --- | --- |
+| `id` | yes | `string` | `""` | Optional identifier for caller-defined tracking. |
 | `name` | no | `string` | `""` | Form field name; see [[types/action-config|action and form-field semantics]]. |
 | `onChangeAction` | yes | [[types/action-config|ActionConfig]] | `null` | Action dispatched when the date value changes. |
 | `placeholder` | yes | `string` | `""` | Placeholder text shown when no date is selected. |

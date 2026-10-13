@@ -37,8 +37,6 @@ Named shapes, unions without either primitive member, and `unknown` types whose 
 - [[types/widget-component|WidgetComponent]] — general component nodes and parent-owned child types.
 - [[types/widget-icon|WidgetIcon]] — complete icon catalog and naming conventions.
 - [[types/action-config|ActionConfig]] — actions and form-field payload semantics.
-- [[types/padding|Padding]] — structured inner spacing.
-- [[types/margin|Margin]] — structured outer spacing.
 - [[types/responsive|Responsive]] — values with breakpoint overrides.
 - [[types/editable-config|EditableConfig]] — Text editing configuration.
 - [[types/widget-status|WidgetStatus]] — container status.
@@ -48,13 +46,15 @@ Named shapes, unions without either primitive member, and `unknown` types whose 
 
 ## Conventions
 
-See [[types/dimensions-spacing|dimensions and spacing]] for numeric units and visual token mappings. Parent-owned row, cell, and item interfaces remain within their component pages, not duplicated here. Only declared [[types/widget-component#child-slots|child slots]] accept nested components; leaf components do not accept `children`.
+Numeric dimension and spacing values use interpreter-defined units. Unit scales and exact radius and size token mappings are interpreter choices.
 
-## Color intents and theme
+Parent-owned row, cell, and item interfaces remain within their component pages, not duplicated here. Only declared [[types/widget-component#child-slots|child slots]] accept nested components; leaf components do not accept `children`.
+
+## Color intents
 
 Color, background, and area-fill props accept semantic intent rather than literal colors:
 
-`"neutral" | "accent" | "success" | "warning" | "danger" | "info"`
+`"neutral" | "accent" | "success" | "warning" | "danger" | "info" | "discovery" | "primary" | "secondary"`
 
 | Intent | Meaning |
 | --- | --- |
@@ -64,14 +64,17 @@ Color, background, and area-fill props accept semantic intent rather than litera
 | `warning` | Caution or a condition requiring attention |
 | `danger` | Error, destructive action, or critical condition |
 | `info` | Informational content |
+| `discovery` | New features, exploration, or discovery |
+| `primary` | Primary content or action |
+| `secondary` | Secondary content or action |
 
-The renderer resolves each intent according to the component role, style, interaction state, and active theme. The same intent can produce a filled button, soft surface, readable text, border, or chart mark; it does not specify a fixed color. Foreground/background combinations must maintain readable contrast. Exact palettes, CSS tokens, and color formulas are implementation choices.
+The renderer resolves each intent according to the component role, style, interaction state, and active theme. The same intent can produce a filled button, soft surface, readable text, border, or chart mark; it does not specify a fixed color. Foreground/background combinations must maintain readable contrast. Exact palettes, rendering tokens, and color formulas are implementation choices.
 
-Raw CSS colors, palette names, previous color tokens, and theme names are not accepted as color intents. Prop names (`color`, `background`, `fillColor`) remain unchanged. Their enums are written inline in their authoritative tables.
+Literal colors, palette names, previous color tokens, and theme names are not accepted as color intents. Prop names (`color`, `background`, `fillColor`) remain unchanged. Their enums are written inline in their authoritative tables.
 
 Ordinary text, icons, borders, surfaces, and Badge default to `neutral`; Button defaults to `accent`. Existing size and style props remain unchanged. Chart series color defaults to omission (`null`), allowing automatic palette assignment; omitted area `fillColor` derives from its series color. Explicit series intents use intent-resolved colors. Automatic palette assignment is independent of semantic intent; exact colors and ordering are implementation choices.
 
-Theme values remain `"dark" | "light"`, with `"dark"` as the default active theme. An omitted `theme` prop (including `null`) does not override the active theme. Theme is not a color intent.
+Theme selection belongs to the host application, outside the widget interface. Components do not accept a `theme` prop or select a light/dark mode. All components in a rendered widget tree use the same host-selected theme; mixed per-element themes are not supported. Color intents remain semantic and resolve within that single theme. The widget specification defines no theme enum or default.
 
 ## Control value conventions
 
@@ -83,8 +86,14 @@ A control's `value` matches its data type, and `defaultValue` uses the same type
 - [[components/select|Select]] and [[components/radiogroup|RadioGroup]] use the string value of the selected option.
 - [[components/checkbox|Checkbox]] represents its boolean value through `checked` and `defaultChecked`, both defaulting to `false`.
 
-Action props consistently use [[types/action-config|ActionConfig]]. These inferred shapes are adopted interface decisions. State ownership, precedence between `value` and `defaultValue`, and invalid-value handling still need behavior definitions.
+Action props consistently use [[types/action-config|ActionConfig]]. These shapes are adopted interface decisions. Control state ownership, precedence between `value` and `defaultValue`, and invalid-value handling belong to the interpreter, not the data interface.
 
-## Open chart definitions
+## Interpreter responsibilities
 
-The shape of `yAxis.domain` and the formatting strategies accepted by `tooltipValueFormatter` still need explicit definitions. A missing x-axis data key also needs an error-handling rule.
+Chart missing-key handling, automatic-range calculation, and treatment of out-of-range values belong to the interpreter. Action transport, dispatch timing, and merging form values with configured payload also belong to the interpreter. These are not unresolved data shapes.
+
+Icon alias resolution and unknown-name handling are deferred interpreter work.
+
+## Responsive layout intent
+
+[[types/responsive|Responsive]] values use cascading minimum-width overrides based on the Grid's available container width. The host defines a consistent threshold set; the data interface defines breakpoint names and resolution order, not physical widths. Numeric coercion and column rounding are interpreter responsibilities.

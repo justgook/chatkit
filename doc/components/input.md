@@ -11,7 +11,7 @@ Single-line text input control.
 
 ## Usage
 
-```tsx
+```
 <Input name="email" placeholder="you@example.com" />
 ```
 
@@ -21,8 +21,9 @@ This is a leaf component: `children` is not accepted. See [[types/widget-compone
 
 | Name | Optional | Type / values | Default | Description |
 | --- | --- | --- | --- | --- |
+| `id` | yes | `string` | `""` | Optional identifier for caller-defined tracking. |
 | `name` | no | `string` | `""` | Form field name; see [[types/action-config|action and form-field semantics]]. |
-| `inputType` | yes | `"number" \| "email" \| "text" \| "password" \| "tel" \| "url"` | `"text"` | Native input type. |
+| `inputType` | yes | `"number" \| "email" \| "text" \| "password" \| "tel" \| "url"` | `"text"` | Kind of input value. |
 | `defaultValue` | yes | `string \| number` | `0` for `"number"`; `""` otherwise | Initial input value; uses the same type as `value` for the selected `inputType`. |
 | `variant` | yes | `"soft" \| "outline"` | `"outline"` | Visual style of the input. |
 | `size` | yes | `"sm" \| "md" \| "lg" \| "2xs" \| "xs" \| "xl" \| "2xl" \| "3xl" \| "3xs"` | `md` | Controls the size of the input |
@@ -31,8 +32,8 @@ This is a leaf component: `children` is not accepted. See [[types/widget-compone
 | `pattern` | yes | `string` | `""` | Regex pattern for input validation. |
 | `placeholder` | yes | `string` | `""` | Placeholder text shown when empty. |
 | `allowAutofillExtensions` | yes | `boolean` | `inputType == "password"` | Allow password managers / autofill extensions to appear. |
-| `autoSelect` | yes | `boolean` | `false` | Select all contents of the input when it mounts. |
-| `autoFocus` | yes | `boolean` | `false` | Autofocus the input when it mounts. |
+| `autoSelect` | yes | `boolean` | `false` | Select all contents of the input when it is first presented. |
+| `autoFocus` | yes | `boolean` | `false` | Request focus for the input when it is first presented. |
 | `disabled` | yes | `boolean` | `false` | Disable interactions and apply disabled styles. |
 | `pill` | yes | `boolean` | `false` | Determines if the input should be a fully rounded pill shape. |
 | `value` | yes | `string \| number` | `0` for `"number"`; `""` otherwise | Current input value: number when `inputType="number"`, string for all other input types. |

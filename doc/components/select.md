@@ -11,7 +11,7 @@ Single-value dropdown select control.
 
 ## Usage
 
-```tsx
+```
 <Select name="choice" options={[{ label: "A", value: "a" }]} />
 ```
 
@@ -19,6 +19,7 @@ Single-value dropdown select control.
 
 | Name | Optional | Type / values | Default | Description |
 | --- | --- | --- | --- | --- |
+| `id` | yes | `string` | `""` | Optional identifier for caller-defined tracking. |
 | `name` | no | `string` | `""` | Form field name; see [[types/action-config|action and form-field semantics]]. |
 | `options` | no | `{ value: string; label: string; disabled?: boolean; description?: string; }[]` | `[]` | List of selectable options. |
 | `onChangeAction` | yes | [[types/action-config|ActionConfig]] | `null` | Action dispatched when the value changes. |

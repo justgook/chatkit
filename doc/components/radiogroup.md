@@ -11,7 +11,7 @@ Choose a single option from a set.
 
 ## Usage
 
-```tsx
+```
 <RadioGroup name="size" options={[{ label: "Small", value: "sm" }]} />
 ```
 
@@ -19,6 +19,7 @@ Choose a single option from a set.
 
 | Name | Optional | Type / values | Default | Description |
 | --- | --- | --- | --- | --- |
+| `id` | yes | `string` | `""` | Optional identifier for caller-defined tracking. |
 | `name` | no | `string` | `""` | Form field name; see [[types/action-config|action and form-field semantics]]. |
 | `options` | yes | `{ label: string; value: string; disabled?: boolean; }[]` | `[]` | Array of options to render as radio items. |
 | `ariaLabel` | yes | `string` | `""` | Accessible label for the radio group; falls back to `name`. |

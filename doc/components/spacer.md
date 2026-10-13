@@ -11,7 +11,7 @@ Flexible space to separate content within a layout.
 
 ## Usage
 
-```tsx
+```
 <Row>
   <Badge label="Left" />
   <Spacer minSize={16} />
@@ -23,4 +23,5 @@ Flexible space to separate content within a layout.
 
 | Name | Optional | Type / values | Default | Description |
 | --- | --- | --- | --- | --- |
-| `minSize` | yes | `string \| number` | `"auto"` | Minimum size the spacer should occupy along the flex direction; accepts a numeric pixel value or a CSS string. |
+| `id` | yes | `string` | `""` | Optional identifier for caller-defined tracking. |
+| `minSize` | yes | `string \| number` | `"auto"` | Minimum size the spacer should occupy along the flex direction; accepts a numeric size or an interpreter-defined size expression. |

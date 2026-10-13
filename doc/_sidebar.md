@@ -56,8 +56,6 @@
 - [[types/widget-component|WidgetComponent]]
 - [[types/widget-icon|WidgetIcon]]
 - [[types/action-config|ActionConfig]]
-- [[types/padding|Padding]]
-- [[types/margin|Margin]]
 - [[types/responsive|Responsive]]
 - [[types/editable-config|EditableConfig]]
 - [[types/widget-status|WidgetStatus]]
@@ -66,4 +64,3 @@
 - [[types/bar-series|BarSeries]]
 - [[types/line-series|LineSeries]]
 - [[types/area-series|AreaSeries]]
-- [[types/dimensions-spacing|Dimensions & spacing]]

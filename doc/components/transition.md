@@ -11,7 +11,7 @@ Animate layout changes for a single child component.
 
 ## Usage
 
-```tsx
+```
 <Transition>
   <Text value="Content" />
 </Transition>
@@ -21,4 +21,5 @@ Animate layout changes for a single child component.
 
 | Name | Optional | Type / values | Default | Description |
 | --- | --- | --- | --- | --- |
+| `id` | yes | `string` | `""` | Optional identifier for caller-defined tracking. |
 | `children` | no | [[types/widget-component|WidgetComponent]] | — | The child component to animate layout changes for. |

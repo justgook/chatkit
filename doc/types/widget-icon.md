@@ -5,7 +5,7 @@ status: draft
 
 # WidgetIcon
 
-`WidgetIcon` is a name from this catalog. Refer to this page from every icon-valued prop; glyph assets and the resolver are independent implementation choices. Asset selection and unknown-name behavior remain unresolved.
+`WidgetIcon` is a name from this catalog. Refer to this page from every icon-valued prop; glyph assets and the resolver are independent implementation choices. Asset selection, alias resolution, and unknown-name handling are deferred interpreter responsibilities.
 
 Icon-valued props default to `null`, meaning no icon. This does not make a required prop optional: Icon's `name` must still be supplied with a valid catalog name.
 

@@ -16,7 +16,7 @@ make validate VALIDATE_FLAGS=--strict  # also fail on warnings
 make clean              # remove downloaded engine and build output
 ```
 
-Edit Markdown and assets in `doc/`, then reload the browser.
+Edit Markdown and assets in `doc/`, then refresh the preview.
 The wiki engine is downloaded on first use, pinned to `v1.4.0` in the root Makefile.
 The engine and generated site are ignored by Git.
 `doc/custom.js` registers the `draft` status used by the interface pages.

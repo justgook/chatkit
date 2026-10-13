@@ -9,8 +9,9 @@ Grid layout with responsive columns and gaps.
 
 | Name | Optional | Type / values | Default | Description |
 | --- | --- | --- | --- | --- |
+| `id` | yes | `string` | `""` | Optional identifier for caller-defined tracking. |
 | `children` | yes | [[components/grid#grid-item-props|GridItem]]`[]` | `[]` | Items within this grid. |
-| `columns` | yes | [[types/responsive|Responsive]]`<number \| string[]>` | `0` | Column count or CSS track strings. |
+| `columns` | yes | [[types/responsive|Responsive]]`<number \| string[]>` | `0` | Column count or track sizing expressions interpreted by the host. |
 | `gap` | yes | [[types/responsive|Responsive]]`<number \| string>` | `0` | Spacing between direct children. |
 
 ## Composition
@@ -23,7 +24,8 @@ Grid layout with responsive columns and gaps.
 
 | Name | Optional | Type / values | Default | Description |
 | --- | --- | --- | --- | --- |
+| `id` | yes | `string` | `""` | Optional identifier for caller-defined tracking. |
 | `children` | yes | [[types/widget-component|WidgetComponent]]`[]` | `[]` | Child content. |
 | `span` | yes | [[types/responsive|Responsive]]`<number \| string>` | `0` | Column span. |
 
-Numeric column rounding, breakpoint widths, and spacing scales are not fixed by this interface. See [[types/responsive|Responsive]].
+Numeric column rounding and spacing scales are interpreter responsibilities. Responsive values cascade by available Grid container width using host-defined thresholds; see [[types/responsive|Responsive]].
