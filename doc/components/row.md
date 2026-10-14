@@ -7,7 +7,9 @@ Horizontal flex layout container.
 
 ## Example
 
-![Row example](content/images/row.png)
+```chatkit
+<Row gap={2}>{/* children */}</Row>
+```
 
 ## Usage
 

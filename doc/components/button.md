@@ -7,7 +7,9 @@ Trigger actions with configurable style, size, and icons.
 
 ## Example
 
-![Button example](content/images/button.png)
+```chatkit
+<Button label="Submit" color="accent" />
+```
 
 ## Usage
 

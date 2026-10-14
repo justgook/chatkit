@@ -7,7 +7,13 @@ Flexible space to separate content within a layout.
 
 ## Example
 
-![Spacer example](content/images/spacer.png)
+```chatkit
+<Row>
+  <Badge label="Left" />
+  <Spacer minSize={16} />
+  <Badge label="Right" />
+</Row>
+```
 
 ## Usage
 

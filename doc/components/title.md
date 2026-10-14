@@ -7,7 +7,9 @@ Section headings with scalable sizes and weights.
 
 ## Example
 
-![Title example](content/images/title.png)
+```chatkit
+<Title value="Section title" size="lg" />
+```
 
 ## Usage
 

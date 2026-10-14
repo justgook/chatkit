@@ -7,7 +7,9 @@ Select a date from a calendar popover.
 
 ## Example
 
-![DatePicker example](content/images/datepicker.png)
+```chatkit
+<DatePicker name="birthday" placeholder="YYYY-MM-DD" />
+```
 
 ## Usage
 

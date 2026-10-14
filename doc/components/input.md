@@ -7,7 +7,9 @@ Single-line text input control.
 
 ## Example
 
-![Input example](content/images/input.png)
+```chatkit
+<Input name="email" placeholder="you@example.com" />
+```
 
 ## Usage
 

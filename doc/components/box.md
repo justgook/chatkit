@@ -7,7 +7,11 @@ Flexible container for layout and surface styling.
 
 ## Example
 
-![Box example](content/images/box.png)
+```chatkit
+<Box padding={4} background="surface-secondary">
+  <Text value="Content" />
+</Box>
+```
 
 ## Usage
 

@@ -1,5 +1,5 @@
 WIKI_REPOSITORY ?= https://github.com/justgook/wiki
-WIKI_VERSION ?= v1.4.0
+WIKI_VERSION ?= v1.5.0
 WIKI_ENGINE := .wiki-engine
 WIKI_OUTPUT := .wiki-dist
 WIKI_SOURCE := doc

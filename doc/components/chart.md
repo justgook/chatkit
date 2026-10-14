@@ -7,7 +7,14 @@ Render simple bar, line, and area charts from tabular data.
 
 ## Example
 
-![Chart example](content/images/chart.png)
+```chatkit
+<Chart
+  data={[{ date: "2025-01-01", Desktop: 100, Mobile: 200 }]}
+  series={[{ type: "bar", dataKey: "Desktop" }]}
+  xAxis="date"
+  height={240}
+/>
+```
 
 ## Usage
 

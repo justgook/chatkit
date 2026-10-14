@@ -7,7 +7,11 @@ Animate layout changes for a single child component.
 
 ## Example
 
-![Transition example](content/images/transition.png)
+```chatkit
+<Transition>
+  <Text value="Content" />
+</Transition>
+```
 
 ## Usage
 

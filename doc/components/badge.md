@@ -7,7 +7,9 @@ Emphasize details with a status indicator.
 
 ## Example
 
-![Badge example](content/images/badge.png)
+```chatkit
+<Badge label="Success" color="success" size="md" />
+```
 
 ## Usage
 

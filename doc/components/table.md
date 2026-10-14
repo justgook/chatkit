@@ -7,7 +7,30 @@ Tabular layout for column-aligned data, with support for header rows and cell sp
 
 ## Example
 
-![Table example](content/images/table.png)
+```chatkit
+<Table>
+  <Table.Row header>
+    <Table.Cell><Text value="Item" size="sm" /></Table.Cell>
+    <Table.Cell><Text value="Category" size="sm" /></Table.Cell>
+    <Table.Cell align="end"><Text value="Qty" size="sm" /></Table.Cell>
+  </Table.Row>
+  <Table.Row>
+    <Table.Cell><Text value="Notebook" size="sm" /></Table.Cell>
+    <Table.Cell><Text value="Office" size="sm" /></Table.Cell>
+    <Table.Cell align="end"><Text value="3" size="sm" /></Table.Cell>
+  </Table.Row>
+  <Table.Row>
+    <Table.Cell><Text value="Pen Set" size="sm" /></Table.Cell>
+    <Table.Cell><Text value="Office" size="sm" /></Table.Cell>
+    <Table.Cell align="end"><Text value="2" size="sm" /></Table.Cell>
+  </Table.Row>
+  <Table.Row>
+    <Table.Cell><Text value="Mouse Pad" size="sm" /></Table.Cell>
+    <Table.Cell><Text value="Accessories" size="sm" /></Table.Cell>
+    <Table.Cell align="end"><Text value="1" size="sm" /></Table.Cell>
+  </Table.Row>
+</Table>
+```
 
 ## Usage
 

@@ -7,7 +7,9 @@ Choose a single option from a set.
 
 ## Example
 
-![RadioGroup example](content/images/radiogroup.png)
+```chatkit
+<RadioGroup name="size" options={[{ label: "Small", value: "sm" }]} />
+```
 
 ## Usage
 

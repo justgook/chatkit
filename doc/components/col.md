@@ -7,7 +7,9 @@ Vertical flex layout container.
 
 ## Example
 
-![Col example](content/images/col.png)
+```chatkit
+<Col gap={2}>{/* children */}</Col>
+```
 
 ## Usage
 

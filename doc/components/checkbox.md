@@ -7,7 +7,9 @@ Binary selection control.
 
 ## Example
 
-![Checkbox example](content/images/checkbox.png)
+```chatkit
+<Checkbox name="accept" label="I agree" />
+```
 
 ## Usage
 

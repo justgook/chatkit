@@ -7,7 +7,9 @@ Multi-line text input control.
 
 ## Example
 
-![Textarea example](content/images/textarea.png)
+```chatkit
+<Textarea name="message" rows={4} />
+```
 
 ## Usage
 

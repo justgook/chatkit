@@ -17,13 +17,13 @@ make clean              # remove downloaded engine and build output
 ```
 
 Edit Markdown and assets in `doc/`, then refresh the preview.
-The wiki engine is downloaded on first use, pinned to `v1.4.0` in the root Makefile.
+The wiki engine is downloaded on first use, pinned to `v1.5.0` in the root Makefile.
 The engine and generated site are ignored by Git.
 `doc/custom.js` registers the `draft` status used by the interface pages.
 Build runs the engine's fast validation automatically; `VALIDATE_FLAGS` controls standalone `make validate`.
 
 Theme: [ENDESGA 32](https://lospec.com/palette-list/endesga-32), configured in `doc/custom.css`.
-Component images are non-normative static visual references and do not inherit wiki colors.
+Component Example blocks use the registered `chatkit` view in `doc/custom.js`; it currently displays a placeholder and escaped composition source. Usage blocks remain plain source.
 Edit interfaces in `doc/components/` and shared definitions in `doc/types/`.
 `doc/types.md` indexes the shared types; `doc/types/widget-icon.md` contains the complete icon catalog.
 Parent-owned child interfaces live in the Table, Grid, and ListView pages. Unresolved contracts are explicitly marked.

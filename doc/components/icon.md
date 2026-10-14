@@ -7,7 +7,9 @@ Visual glyphs for actions and status.
 
 ## Example
 
-![Icon example](content/images/icon.png)
+```chatkit
+<Icon name="search" size="md" />
+```
 
 ## Usage
 

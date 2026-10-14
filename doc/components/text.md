@@ -7,7 +7,9 @@ Display body text with size, weight, and decoration options.
 
 ## Example
 
-![Text example](content/images/text.png)
+```chatkit
+<Text value="Hello world" size="md" />
+```
 
 ## Usage
 

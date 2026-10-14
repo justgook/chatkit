@@ -7,7 +7,9 @@ Accessible label for a form field.
 
 ## Example
 
-![Label example](content/images/label.png)
+```chatkit
+<Label value="Email" fieldName="email" />
+```
 
 ## Usage
 

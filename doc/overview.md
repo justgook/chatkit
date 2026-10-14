@@ -9,7 +9,7 @@ chatkit defines public component interfaces for an independent implementation. C
 
 These interfaces are drafts. Known definitions are preserved; unresolved contracts are explicitly marked. See [[types|shared types and open definitions]] and [[types/widget-icon|the icon catalog]].
 
-Usage examples show composition notation. Images are static, non-normative visual references; they are not examples of a working chatkit renderer.
+Usage examples show composition notation. Example blocks currently show a preview placeholder, not a working component renderer.
 
 ## Controls
 

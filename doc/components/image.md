@@ -7,7 +7,9 @@ Display images with optional framing and fitting.
 
 ## Example
 
-![Image example](content/images/image.png)
+```chatkit
+<Image src="https://cnd.example.com/blue-chair.png" alt="Blue chair" frame />
+```
 
 ## Usage
 

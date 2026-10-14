@@ -7,7 +7,9 @@ Render rich formatted content from a markdown source string.
 
 ## Example
 
-![Markdown example](content/images/markdown.png)
+```chatkit
+<Markdown value={"**Bold** and _italic_."} />
+```
 
 ## Usage
 

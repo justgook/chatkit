@@ -7,7 +7,9 @@ Supplemental text for descriptions or hints.
 
 ## Example
 
-![Caption example](content/images/caption.png)
+```chatkit
+<Caption value="Helpful hint" size="md" />
+```
 
 ## Usage
 

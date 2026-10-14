@@ -7,7 +7,9 @@ Single-value dropdown select control.
 
 ## Example
 
-![Select example](content/images/select.png)
+```chatkit
+<Select name="choice" options={[{ label: "A", value: "a" }]} />
+```
 
 ## Usage
 

@@ -7,7 +7,12 @@ Layout container optimized for form controls and submission.
 
 ## Example
 
-![Form example](content/images/form.png)
+```chatkit
+<Form gap={2}>
+  <Input name="email" placeholder="Email" />
+  <Button label="Submit" submit />
+</Form>
+```
 
 ## Usage
 

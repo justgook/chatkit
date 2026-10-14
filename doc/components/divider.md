@@ -7,7 +7,9 @@ Separate content with a thin line.
 
 ## Example
 
-![Divider example](content/images/divider.png)
+```chatkit
+<Divider spacing={2} />
+```
 
 ## Usage
 
