@@ -5,18 +5,19 @@ import configure from "../doc/custom.js"
 
 const escapeHTML = (value) => value.replaceAll("&", "&amp;").replaceAll("<", "&lt;").replaceAll(">", "&gt;")
 
-test("registers draft status and a safe chatkit placeholder", () => {
+test("registers draft status and renders chatkit HTML", () => {
     const statuses = [], blocks = []
     configure({ registerStatus: (value) => statuses.push(value), registerCodeBlock: (value) => blocks.push(value) })
     assert.deepEqual(statuses, ["draft"])
     assert.equal(blocks.length, 1)
     assert.equal(blocks[0].name, "chatkit")
-    const source = '<Text value="<script>bad()</script> & text" />'
+    const source = '<Box><Row>Content & more</Row></Box>'
     const result = blocks[0].render({ source, helpers: { escapeHTML } })
     assert.equal(result.className, "chatkit-preview")
-    assert.match(result.html, /Preview renderer coming soon/)
-    assert.ok(result.html.includes(escapeHTML(source)))
-    assert.ok(!result.html.includes("<script>"))
+    assert.ok(!result.html.includes("ChatKit preview"))
+    assert.ok(result.html.includes("<div><div>Content &amp; more</div></div>"))
+    assert.ok(!result.html.includes("Preview renderer coming soon"))
+    assert.ok(!result.html.includes("<pre>"))
 })
 
 test("every component Example uses the same source as its first Usage block", async () => {

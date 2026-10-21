@@ -7,7 +7,7 @@ import { parseJSX } from "../doc/custom.js"
 // Verify that the browser debug entry point remains available.
 const script = (await readFile(new URL("../doc/custom.js", import.meta.url), "utf8"))
     .replace("export default ", "")
-    .replace("export function parseJSX", "function parseJSX")
+    .replaceAll("export function ", "function ")
 const context = vm.createContext({ window: {} })
 vm.runInContext(script, context)
 const node = (type, props = {}, children = []) => ({ type, props, children })

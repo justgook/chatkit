@@ -80,6 +80,5 @@
   border-radius: 8px;
   background: var(--surface);
 }
-.chatkit-preview-label { color: var(--accent); font-weight: 700; }
 .chatkit-preview p { color: var(--muted); }
 .chatkit-preview pre { margin-bottom: 0; }
