@@ -24,6 +24,10 @@ Build runs the engine's fast validation automatically; `VALIDATE_FLAGS` controls
 
 Theme: [ENDESGA 32](https://lospec.com/palette-list/endesga-32), configured in `doc/custom.css`.
 Component Example blocks use the registered `chatkit` view in `doc/custom.js`; it currently displays a placeholder and escaped composition source. Usage blocks remain plain source.
+`doc/custom.js` also exports `parseJSX(source)` (available as `window.parseJSX` for browser-console debugging). It returns `{ type, props, children }` for a single root element. This is a static subset, not a full JavaScript/JSX parser: props accept strings and brace-wrapped literal values (including nested arrays/objects with identifier or quoted keys); boolean attributes, dotted component names, text children and JSX comments are supported. Strings use JSON-style escapes plus single quotes; text children are trimmed. Expressions, spreads and fragments are unsupported and never evaluated. The placeholder renderer does not call the parser yet.
+
+Run parser and code-block regression tests with `node --test`.
+
 Edit interfaces in `doc/components/` and shared definitions in `doc/types/`.
 `doc/types.md` indexes the shared types; `doc/types/widget-icon.md` contains the complete icon catalog.
 Parent-owned child interfaces live in the Table, Grid, and ListView pages. Unresolved contracts are explicitly marked.
