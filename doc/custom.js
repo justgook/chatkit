@@ -110,11 +110,11 @@ function trackingId(props) {
 }
 
 function renderBasic({ props, children }) {
-    return `<div${trackingId(props)}>${children.map(renderNode).join("")}</div>`
+    return `<div class="chatkit-basic"${trackingId(props)}>${children.map(renderNode).join("")}</div>`
 }
 
 function renderBox({ props, children }) {
-    return `<div${trackingId(props)}>${children.map(renderNode).join("")}</div>`
+    return `<div class="chatkit-box"${trackingId(props)}>${children.map(renderNode).join("")}</div>`
 }
 
 function renderCard({ props, children }) {
@@ -122,15 +122,15 @@ function renderCard({ props, children }) {
 }
 
 function renderCardCarousel({ props, children }) {
-    return `<div${trackingId(props)}>${children.map(renderNode).join("")}</div>`
+    return `<div class="chatkit-card-carousel"${trackingId(props)}>${children.map(renderNode).join("")}</div>`
 }
 
 function renderCardLinkItem({ props, children }) {
-    return `<div${trackingId(props)}>${children.map(renderNode).join("")}</div>`
+    return `<div class="chatkit-card-link"${trackingId(props)}>${children.map(renderNode).join("")}</div>`
 }
 
 function renderCol({ props, children }) {
-    return `<div${trackingId(props)}>${children.map(renderNode).join("")}</div>`
+    return `<div class="chatkit-col"${trackingId(props)}>${children.map(renderNode).join("")}</div>`
 }
 
 function renderForm({ props, children }) {
@@ -138,7 +138,7 @@ function renderForm({ props, children }) {
 }
 
 function renderGrid({ props, children }) {
-    return `<div${trackingId(props)}>${children.map(renderNode).join("")}</div>`
+    return `<div class="chatkit-grid"${trackingId(props)}>${children.map(renderNode).join("")}</div>`
 }
 
 function renderGridItem({ props, children }) {
@@ -154,7 +154,7 @@ function renderListViewItem({ props, children }) {
 }
 
 function renderRow({ props, children }) {
-    return `<div${trackingId(props)}>${children.map(renderNode).join("")}</div>`
+    return `<div class="chatkit-row"${trackingId(props)}>${children.map(renderNode).join("")}</div>`
 }
 
 function renderTable({ props, children }) {
@@ -174,7 +174,7 @@ function renderTransition({ props, children }) {
 }
 
 function renderBadge({ props }) {
-    return `<span${trackingId(props)}>${escapeHTML(props.label ?? "")}</span>`
+    return `<span class="chatkit-badge"${trackingId(props)}>${escapeHTML(props.label ?? "")}</span>`
 }
 
 function renderButton({ props }) {
@@ -191,7 +191,7 @@ function renderChart({ props }) {
 
 function renderCheckbox({ props }) {
     const checked = props.checked ?? props.defaultChecked ?? false
-    return `<label${trackingId(props)}><input type="checkbox" name="${escapeHTML(props.name ?? "")}"${checked ? " checked" : ""}>${escapeHTML(props.label ?? "")}</label>`
+    return `<label${trackingId(props)}><input type="checkbox" name="${escapeHTML(props.name ?? "")}"${checked ? " checked" : ""}${props.disabled ? " disabled" : ""}${props.required ? " required" : ""}>${escapeHTML(props.label ?? "")}</label>`
 }
 
 function renderDatePicker({ props }) {
@@ -203,12 +203,12 @@ function renderDivider({ props }) {
 }
 
 function renderFavicon({ props }) {
-    return `<span${trackingId(props)}></span>`
+    return `<span class="chatkit-favicon"${trackingId(props)}></span>`
 }
 
 function renderIcon({ props }) {
     // Text fallback until icon glyph rendering is implemented.
-    return `<span${trackingId(props)}>${escapeHTML(props.name ?? "")}</span>`
+    return `<span class="chatkit-icon"${trackingId(props)}>${escapeHTML(props.name ?? "")}</span>`
 }
 
 function renderIFrame({ props }) {
@@ -220,7 +220,7 @@ function renderImage({ props }) {
 }
 
 function renderInput({ props }) {
-    return `<input${trackingId(props)} name="${escapeHTML(props.name ?? "")}" value="${escapeHTML(props.value ?? props.defaultValue ?? "")}">`
+    return `<input${trackingId(props)} autocomplete="off" name="${escapeHTML(props.name ?? "")}" value="${escapeHTML(props.value ?? props.defaultValue ?? "")}">`
 }
 
 function renderLabel({ props }) {
@@ -229,30 +229,37 @@ function renderLabel({ props }) {
 
 function renderMarkdown({ props }) {
     // Plain text for now; never insert Markdown source as raw HTML.
-    return `<div${trackingId(props)}>${escapeHTML(props.value ?? "")}</div>`
+    return `<div class="chatkit-markdown"${trackingId(props)}>${escapeHTML(props.value ?? "")}</div>`
 }
 
 function renderRadioGroup({ props }) {
     const value = props.value ?? props.defaultValue ?? ""
-    const options = (props.options ?? []).map((option) =>
-        `<label><input type="radio" name="${escapeHTML(props.name ?? "")}" value="${escapeHTML(option.value)}"${option.value === value ? " checked" : ""}${option.disabled ? " disabled" : ""}>${escapeHTML(option.label)}</label>`
-    ).join("")
-    return `<div${trackingId(props)} role="radiogroup" aria-label="${escapeHTML(props.name ?? "")}">${options}</div>`
+    const options = (props.options ?? [])
+        .map(
+            (option) =>
+                `<label><input type="radio" name="${escapeHTML(props.name ?? "")}" value="${escapeHTML(option.value)}"${option.value === value ? " checked" : ""}${props.disabled || option.disabled ? " disabled" : ""}${props.required ? " required" : ""}>${escapeHTML(option.label)}</label>`,
+        )
+        .join("")
+    return `<div class="chatkit-radio-group"${trackingId(props)} role="radiogroup" aria-label="${escapeHTML(props.ariaLabel || props.name || "")}">${options}</div>`
 }
 
 function renderSelect({ props }) {
     const value = props.value ?? props.defaultValue ?? ""
-    const options = (props.options ?? []).map((option) =>
-        `<option value="${escapeHTML(option.value)}"${option.value === value ? " selected" : ""}${option.disabled ? " disabled" : ""}>${escapeHTML(option.label)}</option>`
-    ).join("")
+    const options = (props.options ?? [])
+        .map(
+            (option) =>
+                `<option value="${escapeHTML(option.value)}"${option.value === value ? " selected" : ""}${option.disabled ? " disabled" : ""}>${escapeHTML(option.label)}</option>`,
+        )
+        .join("")
     // A native single-select otherwise silently selects the first real option.
     const empty = (props.options ?? []).some((option) => option.value === value)
-        ? "" : '<option value="" selected hidden></option>'
-    return `<select${trackingId(props)} name="${escapeHTML(props.name ?? "")}">${empty}${options}</select>`
+        ? ""
+        : `<option value="" selected disabled hidden>${escapeHTML(props.placeholder ?? "Choose an option…")}</option>`
+    return `<select${trackingId(props)} name="${escapeHTML(props.name ?? "")}"${props.disabled ? " disabled" : ""}${props.required ? " required" : ""}>${empty}${options}</select>`
 }
 
 function renderSpacer({ props }) {
-    return `<div${trackingId(props)}></div>`
+    return `<div class="chatkit-spacer"${trackingId(props)}></div>`
 }
 
 function renderText({ props }) {

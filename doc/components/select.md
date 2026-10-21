@@ -8,13 +8,33 @@ Single-value dropdown select control.
 ## Example
 
 ```chatkit
-<Select name="choice" options={[{ label: "A", value: "a" }]} />
+<Select
+  name="flavor"
+  placeholder="Choose a flavor…"
+  options={[
+    { label: "Vanilla", value: "vanilla" },
+    { label: "Chocolate", value: "chocolate" },
+    { label: "Strawberry", value: "strawberry" },
+    { label: "Mint chocolate chip", value: "mint" },
+    { label: "Pistachio (sold out)", value: "pistachio", disabled: true }
+  ]}
+/>
 ```
 
 ## Usage
 
 ```
-<Select name="choice" options={[{ label: "A", value: "a" }]} />
+<Select
+  name="flavor"
+  placeholder="Choose a flavor…"
+  options={[
+    { label: "Vanilla", value: "vanilla" },
+    { label: "Chocolate", value: "chocolate" },
+    { label: "Strawberry", value: "strawberry" },
+    { label: "Mint chocolate chip", value: "mint" },
+    { label: "Pistachio (sold out)", value: "pistachio", disabled: true }
+  ]}
+/>
 ```
 
 ## Props
@@ -25,7 +45,7 @@ Single-value dropdown select control.
 | `name` | no | `string` | `""` | Form field name; see [[types/action-config|action and form-field semantics]]. |
 | `options` | no | `{ value: string; label: string; disabled?: boolean; description?: string; }[]` | `[]` | List of selectable options. |
 | `onChangeAction` | yes | [[types/action-config|ActionConfig]] | `null` | Action dispatched when the value changes. |
-| `placeholder` | yes | `string` | `""` | Placeholder text shown when no value is selected. |
+| `placeholder` | yes | `string` | `"Choose an option…"` | Placeholder text shown when no value is selected. Set to `""` for a blank placeholder. |
 | `defaultValue` | yes | `string` | `""` | Initial value of the select. |
 | `variant` | yes | `"solid" \| "soft" \| "outline" \| "ghost"` | `"outline"` | Visual style of the select. |
 | `size` | yes | `"sm" \| "md" \| "lg" \| "2xs" \| "xs" \| "xl" \| "2xl" \| "3xl" \| "3xs"` | `md` | Controls the size of the control. |

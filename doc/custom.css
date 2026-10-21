@@ -2,83 +2,559 @@
  * Wiki v1.3.0 public tokens. Named colors are exact palette entries.
  */
 :root {
-  color-scheme: dark;
-  --edg-night: #181425;
-  --edg-navy: #262b44;
-  --edg-slate: #3a4466;
-  --edg-steel: #5a6988;
-  --edg-gray: #8b9bb4;
-  --edg-silver: #c0cbdc;
-  --edg-white: #ffffff;
-  --edg-amber: #feae34;
-  --edg-yellow: #fee761;
-  --edg-orange: #f77622;
-  --edg-green: #63c74d;
-  --edg-cyan: #2ce8f5;
-  --edg-blue: #0099db;
-  --edg-pink: #f6757a;
-  --edg-magenta: #b55088;
+    color-scheme: dark;
+    --edg-night: #181425;
+    --edg-navy: #262b44;
+    --edg-slate: #3a4466;
+    --edg-steel: #5a6988;
+    --edg-gray: #8b9bb4;
+    --edg-silver: #c0cbdc;
+    --edg-white: #ffffff;
+    --edg-amber: #feae34;
+    --edg-yellow: #fee761;
+    --edg-orange: #f77622;
+    --edg-green: #63c74d;
+    --edg-cyan: #2ce8f5;
+    --edg-blue: #0099db;
+    --edg-pink: #f6757a;
+    --edg-magenta: #b55088;
 
-  --bg: var(--edg-night);
-  --surface: var(--edg-navy);
-  --surface-raised: var(--edg-slate);
-  --border: var(--edg-slate);
-  --border-strong: var(--edg-steel);
-  --text: var(--edg-white);
-  --prose-text: var(--edg-silver);
-  --muted: var(--edg-silver);
-  --faint: var(--edg-gray);
-  --accent: var(--edg-amber);
-  --accent-ink: var(--edg-night);
-  --secondary: var(--edg-cyan);
-  --danger: var(--edg-pink);
-  --warning: var(--edg-yellow);
-  --evidence: var(--edg-pink);
-  --focus-ring: var(--edg-cyan);
-  --selection-bg: var(--edg-cyan);
-  --selection-text: var(--edg-night);
-  --backdrop: color-mix(in srgb, var(--edg-night) 90%, transparent);
-  --sidebar-shadow: color-mix(in srgb, var(--edg-night) 70%, transparent);
+    --bg: var(--edg-night);
+    --surface: var(--edg-navy);
+    --surface-raised: var(--edg-slate);
+    --border: var(--edg-slate);
+    --border-strong: var(--edg-steel);
+    --text: var(--edg-white);
+    --prose-text: var(--edg-silver);
+    --muted: var(--edg-silver);
+    --faint: var(--edg-gray);
+    --accent: var(--edg-amber);
+    --accent-ink: var(--edg-night);
+    --secondary: var(--edg-cyan);
+    --danger: var(--edg-pink);
+    --warning: var(--edg-yellow);
+    --evidence: var(--edg-pink);
+    --focus-ring: var(--edg-cyan);
+    --selection-bg: var(--edg-cyan);
+    --selection-text: var(--edg-night);
+    --backdrop: color-mix(in srgb, var(--edg-night) 90%, transparent);
+    --sidebar-shadow: color-mix(in srgb, var(--edg-night) 70%, transparent);
 
-  --syntax-bg: var(--surface);
-  --syntax-text: var(--edg-silver);
-  --syntax-keyword: var(--edg-pink);
-  --syntax-title: var(--edg-yellow);
-  --syntax-literal: var(--edg-cyan);
-  --syntax-string: var(--edg-green);
-  --syntax-symbol: var(--edg-amber);
-  --syntax-tag: var(--edg-pink);
-  --syntax-comment: var(--edg-gray);
-  --syntax-section: var(--edg-cyan);
-  --syntax-bullet: var(--edg-yellow);
-  --syntax-addition-text: var(--edg-green);
-  --syntax-addition-bg: color-mix(in srgb, var(--edg-green) 10%, var(--surface));
-  --syntax-deletion-text: var(--edg-pink);
-  --syntax-deletion-bg: color-mix(in srgb, var(--edg-pink) 10%, var(--surface));
+    --syntax-bg: var(--surface);
+    --syntax-text: var(--edg-silver);
+    --syntax-keyword: var(--edg-pink);
+    --syntax-title: var(--edg-yellow);
+    --syntax-literal: var(--edg-cyan);
+    --syntax-string: var(--edg-green);
+    --syntax-symbol: var(--edg-amber);
+    --syntax-tag: var(--edg-pink);
+    --syntax-comment: var(--edg-gray);
+    --syntax-section: var(--edg-cyan);
+    --syntax-bullet: var(--edg-yellow);
+    --syntax-addition-text: var(--edg-green);
+    --syntax-addition-bg: color-mix(in srgb, var(--edg-green) 10%, var(--surface));
+    --syntax-deletion-text: var(--edg-pink);
+    --syntax-deletion-bg: color-mix(in srgb, var(--edg-pink) 10%, var(--surface));
 
-  /* Diagrams inherit UI tokens. Categorical charts use this palette.
+    /* Diagrams inherit UI tokens. Categorical charts use this palette.
    * Blue/magenta/orange are graphical accents, not small-text colors.
    */
-  --chart-1: var(--edg-amber);
-  --chart-2: var(--edg-cyan);
-  --chart-3: var(--edg-green);
-  --chart-4: var(--edg-pink);
-  --chart-5: var(--edg-blue);
-  --chart-6: var(--edg-yellow);
-  --chart-7: var(--edg-magenta);
-  --chart-8: var(--edg-orange);
+    --chart-1: var(--edg-amber);
+    --chart-2: var(--edg-cyan);
+    --chart-3: var(--edg-green);
+    --chart-4: var(--edg-pink);
+    --chart-5: var(--edg-blue);
+    --chart-6: var(--edg-yellow);
+    --chart-7: var(--edg-magenta);
+    --chart-8: var(--edg-orange);
 }
 
 /* Content layout only; all theme colors use public tokens above. */
-.prose td { vertical-align: top; overflow-wrap: anywhere; }
-.prose td:first-child { min-width: 9rem; }
-.prose td:last-child { min-width: 5rem; }
+.prose td {
+    vertical-align: top;
+    overflow-wrap: anywhere;
+}
+.prose td:first-child {
+    min-width: 9rem;
+}
+.prose td:last-child {
+    min-width: 5rem;
+}
+
+/* ========================================================================
+ *  CHATKIT — preview component styles
+ * ========================================================================
+ * Adapted from ../chatkit/reference/studio/renderer.css: layout, typography,
+ * controls, badges and tables. Studio's hashed classes and private color
+ * tokens are replaced by wiki tokens. All styles live under .chatkit-preview;
+ * tag selectors are used wherever possible, with classes only for components
+ * that share an HTML tag but need different styles (such as Row and Col).
+ * Only base styles here; component prop variants are added incrementally.
+ */
 
 .chatkit-preview {
-  padding: 1rem;
-  border: 1px dashed var(--border-strong);
-  border-radius: 8px;
-  background: var(--surface);
+    padding: 1rem;
+    border: 1px dashed var(--border-strong);
+    border-radius: 8px;
+    background: var(--surface);
+    overflow-x: auto;
+    color: var(--text);
+    font-family: var(--font-sans);
+    font-size: 0.875rem;
+    line-height: 1.5;
 }
-.chatkit-preview p { color: var(--muted); }
-.chatkit-preview pre { margin-bottom: 0; }
+
+/* Shared foundation. Do not reset wiki elements outside the preview. */
+.chatkit-preview,
+.chatkit-preview * {
+    box-sizing: border-box;
+    min-width: 0;
+    max-width: 100%;
+}
+.chatkit-preview :is(button, input, select, textarea) {
+    font: inherit;
+}
+
+/* Layout */
+.chatkit-preview .chatkit-basic,
+.chatkit-preview .chatkit-box,
+.chatkit-preview .chatkit-col,
+.chatkit-preview form,
+.chatkit-preview article,
+.chatkit-preview .chatkit-card-link {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0;
+}
+
+.chatkit-preview .chatkit-row {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 0;
+}
+
+.chatkit-preview .chatkit-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(0, 1fr));
+    grid-auto-rows: minmax(0, auto);
+    gap: 0.5rem;
+    width: 100%;
+}
+
+.chatkit-preview article {
+    width: 560px;
+    padding: 1rem;
+    overflow: hidden;
+    border: 1px solid var(--border);
+    border-radius: 1.5rem;
+    background: var(--surface-raised);
+}
+
+.chatkit-preview .chatkit-card-carousel {
+    display: flex;
+    gap: 1rem;
+    overflow-x: auto;
+    scroll-snap-type: x proximity;
+}
+.chatkit-preview .chatkit-card-carousel > article {
+    flex-shrink: 0;
+    scroll-snap-align: start;
+}
+
+.chatkit-preview .chatkit-card-link {
+    padding: 1rem;
+}
+.chatkit-preview .chatkit-spacer {
+    flex: 1;
+}
+
+/* Scoped tag selectors also override the wiki's .prose tag defaults. */
+.chatkit-preview ul {
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+.chatkit-preview li {
+    margin: 0;
+    padding: 0.625rem;
+    border-bottom: 1px solid var(--border);
+}
+.chatkit-preview li:last-child {
+    border-bottom: 0;
+}
+
+/* Typography */
+.chatkit-preview span {
+    display: block;
+    color: var(--prose-text);
+    white-space: pre-line;
+}
+.chatkit-preview h3 {
+    margin: 0;
+    color: var(--text);
+    font-size: 1.25rem;
+    font-weight: 500;
+    line-height: 1.3;
+    letter-spacing: -0.02em;
+}
+.chatkit-preview small {
+    display: block;
+    color: var(--muted);
+    font-size: 0.75rem;
+    line-height: 1.3;
+}
+.chatkit-preview label {
+    color: var(--muted);
+    font-size: 0.875rem;
+    font-weight: 500;
+}
+.chatkit-preview .chatkit-markdown {
+    color: var(--prose-text);
+    white-space: pre-wrap;
+    overflow-wrap: anywhere;
+}
+
+/* Icon names are inline fallbacks, not Text nodes. */
+.chatkit-preview .chatkit-icon,
+.chatkit-preview .chatkit-favicon {
+    display: inline-block;
+    color: var(--text);
+    white-space: normal;
+}
+
+/* Badges and buttons */
+.chatkit-preview .chatkit-badge {
+    display: inline-flex;
+    align-items: center;
+    align-self: flex-start;
+    flex-shrink: 0;
+    gap: 0.25rem;
+    min-height: 1.25rem;
+    padding: 0 0.375rem;
+    border-radius: 999px;
+    background: var(--surface-raised);
+    color: var(--text);
+    font-size: 0.75rem;
+    font-weight: 500;
+    line-height: 1.25;
+    white-space: nowrap;
+}
+.chatkit-preview button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    gap: 0.5rem;
+    min-height: 2rem;
+    padding: 0.375rem 0.75rem;
+    border: 1px solid transparent;
+    border-radius: 0.5rem;
+    background: var(--accent);
+    color: var(--accent-ink);
+    font-weight: 500;
+    line-height: 1;
+    white-space: nowrap;
+    cursor: pointer;
+}
+.chatkit-preview button:enabled:hover {
+    background: color-mix(in srgb, var(--accent) 85%, var(--text));
+}
+.chatkit-preview button:enabled:active {
+    background: color-mix(in srgb, var(--accent) 85%, var(--bg));
+}
+
+/* Native controls keep the lightweight renderer independent of Studio JS. */
+.chatkit-preview input:not([type="checkbox"]):not([type="radio"]),
+.chatkit-preview textarea,
+.chatkit-preview select {
+    min-height: 2rem;
+    padding: 0.375rem 0.75rem;
+    border: 1px solid var(--border-strong);
+    border-radius: 0.5rem;
+    background: var(--bg);
+    color: var(--text);
+}
+/* Native fallback; supporting browsers enhance the select without wrappers. */
+.chatkit-preview select {
+    -webkit-appearance: auto;
+    appearance: auto;
+    align-self: flex-start;
+    min-width: min(10rem, 100%);
+    width: fit-content;
+    height: 2rem;
+    padding-block: 0;
+    padding-inline-end: 0.5rem;
+    cursor: pointer;
+    transition: border-color 120ms ease;
+}
+.chatkit-preview select:enabled:hover { border-color: var(--muted); }
+.chatkit-preview select:has(> option:checked[hidden]) { color: var(--muted); }
+.chatkit-preview select option { color: var(--text); }
+.chatkit-preview select option:disabled { color: var(--faint); }
+
+/* Customizable native picker: no extra HTML, JS or styling attributes.
+ * High-contrast mode deliberately keeps the system picker and arrow.
+ */
+@supports (appearance: base-select) and selector(select::picker-icon) and selector(select::picker(select)) {
+    @media (forced-colors: none) {
+        .chatkit-preview select,
+        .chatkit-preview select::picker(select) {
+            appearance: base-select;
+        }
+        .chatkit-preview select {
+    --chatkit-select-icon: url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20fill%3D%22currentColor%22%20viewBox%3D%220%200%2010%2016%22%3E%3Cpath%20fill-rule%3D%22evenodd%22%20d%3D%22M4.3.7a1%201%200%200%201%201.4%200l4%203.5a1%201%200%201%201-1.4%201.6L5%202.8l-3.3%203A1%201%200%200%201%20.3%204.2zm-4%209.7a1%201%200%200%201%201.4-.1L5%2013.2l3.3-3a1%201%200%201%201%201.4%201.6l-4%203.5a1%201%200%200%201-1.4%200l-4-3.5a1%201%200%200%201%200-1.4%22%20clip-rule%3D%22evenodd%22%2F%3E%3C%2Fsvg%3E");
+            display: inline-flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 0.375rem;
+        }
+        .chatkit-preview select::picker-icon {
+            content: "";
+            flex-shrink: 0;
+            width: 0.625rem;
+            height: 1rem;
+            margin: 0;
+            background: var(--muted);
+            -webkit-mask: var(--chatkit-select-icon) center / contain no-repeat;
+            mask: var(--chatkit-select-icon) center / contain no-repeat;
+        }
+        .chatkit-preview select::picker(select) {
+            margin-block: 0.25rem;
+            padding: 0.375rem;
+            max-block-size: min(18rem, 70dvh);
+            overflow: auto;
+            border: 1px solid var(--border-strong);
+            border-radius: 0.5rem;
+            background: var(--surface);
+            color: var(--text);
+            box-shadow: 0 8px 24px var(--backdrop);
+            font: 0.875rem/1.5 var(--font-sans);
+        }
+        .chatkit-preview select option {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.375rem 0.75rem;
+            border-radius: 0.25rem;
+            cursor: pointer;
+        }
+        .chatkit-preview select option[hidden] { display: none; }
+        .chatkit-preview select option:checked {
+            background: color-mix(in srgb, var(--accent) 12%, var(--surface));
+            color: var(--accent);
+        }
+        .chatkit-preview select option:not(:disabled):is(:hover, :focus-visible) {
+            background: var(--surface-raised);
+        }
+        .chatkit-preview select option:disabled { cursor: not-allowed; }
+        .chatkit-preview select option::checkmark { color: var(--accent); }
+    }
+}
+
+.chatkit-preview input:not([type="checkbox"]):not([type="radio"]):not([type="date"]),
+.chatkit-preview textarea {
+    width: 100%;
+}
+.chatkit-preview textarea {
+    display: block;
+    min-height: 5rem;
+    resize: vertical;
+}
+.chatkit-preview input:not([type="checkbox"]):not([type="radio"])::placeholder,
+.chatkit-preview textarea::placeholder {
+    color: var(--faint);
+}
+.chatkit-preview label:has(> input[type="checkbox"]),
+.chatkit-preview label:has(> input[type="radio"]) {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: var(--text);
+    font-weight: 400;
+    cursor: pointer;
+}
+.chatkit-preview .chatkit-radio-group {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+.chatkit-preview input[type="checkbox"],
+.chatkit-preview input[type="radio"] {
+    flex-shrink: 0;
+    margin: 0;
+    accent-color: var(--accent);
+}
+/* Studio-like checkbox; keep the native input, label and keyboard behavior. */
+.chatkit-preview label:has(> input[type="checkbox"]) {
+    min-height: 1.5rem;
+}
+.chatkit-preview input[type="checkbox"] {
+    -webkit-appearance: none;
+    appearance: none;
+    display: inline-grid;
+    place-content: center;
+    width: 1.125rem;
+    height: 1.125rem;
+    padding: 0;
+    border: 1px solid var(--border-strong);
+    border-radius: 0.25rem;
+    background: var(--bg);
+    color: var(--accent-ink);
+    cursor: pointer;
+    transition:
+        background-color 120ms ease,
+        border-color 120ms ease;
+}
+.chatkit-preview input[type="checkbox"]::before {
+    content: "";
+    box-sizing: content-box;
+    width: 0.25rem;
+    height: 0.5rem;
+    border: solid currentColor;
+    border-width: 0 2px 2px 0;
+    transform: translateY(-1px) rotate(45deg) scale(0);
+}
+.chatkit-preview label:hover > input[type="checkbox"]:enabled:not(:checked) {
+    border-color: var(--muted);
+}
+.chatkit-preview input[type="checkbox"]:checked {
+    border-color: var(--accent);
+    background: var(--accent);
+}
+.chatkit-preview input[type="checkbox"]:checked::before {
+    transform: translateY(-1px) rotate(45deg) scale(1);
+}
+/* Studio-like radios: a thin circular outline and a solid selected dot. */
+.chatkit-preview label:has(> input[type="radio"]) {
+    min-height: 1.5rem;
+}
+.chatkit-preview input[type="radio"] {
+    -webkit-appearance: none;
+    appearance: none;
+    display: inline-grid;
+    place-content: center;
+    width: 1rem;
+    height: 1rem;
+    padding: 0;
+    border: 1px solid var(--border-strong);
+    border-radius: 50%;
+    background: var(--bg);
+    cursor: pointer;
+    transition: border-color 120ms ease;
+}
+.chatkit-preview input[type="radio"]::before {
+    content: "";
+    width: 0.5rem;
+    height: 0.5rem;
+    border-radius: 50%;
+    background: var(--accent);
+    transform: scale(0);
+}
+.chatkit-preview label:hover > input[type="radio"]:enabled:not(:checked) {
+    border-color: var(--muted);
+}
+.chatkit-preview input[type="radio"]:checked {
+    border-color: var(--accent);
+}
+.chatkit-preview input[type="radio"]:checked::before {
+    transform: scale(1);
+}
+
+/* The disabled label fades the entire control; avoid fading the input twice. */
+.chatkit-preview input[type="checkbox"]:disabled,
+.chatkit-preview input[type="radio"]:disabled {
+    opacity: 1;
+    cursor: not-allowed;
+}
+@media (prefers-reduced-motion: reduce) {
+    .chatkit-preview input[type="checkbox"],
+    .chatkit-preview input[type="radio"],
+    .chatkit-preview select {
+        transition: none;
+    }
+}
+@media (forced-colors: active) {
+    .chatkit-preview input[type="checkbox"],
+    .chatkit-preview input[type="radio"] {
+        -webkit-appearance: auto;
+        appearance: auto;
+    }
+    .chatkit-preview input[type="checkbox"]::before,
+    .chatkit-preview input[type="radio"]::before {
+        content: none;
+    }
+}
+
+.chatkit-preview :focus-visible {
+    outline: 2px solid var(--focus-ring);
+    outline-offset: 2px;
+}
+.chatkit-preview :disabled,
+.chatkit-preview label:has(input:disabled) {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+/* Tables: undo documentation-table cell borders and minimum widths. */
+.chatkit-preview table {
+    width: 100%;
+    margin: 0;
+    border: 0;
+    border-collapse: separate;
+    border-spacing: 0;
+    table-layout: auto;
+    font-size: 0.875rem;
+}
+.chatkit-preview td {
+    padding: 0.625rem 0.5rem;
+    border: 0;
+    border-bottom: 1px solid var(--border);
+    text-align: start;
+    vertical-align: middle;
+    overflow-wrap: anywhere;
+}
+.chatkit-preview td:first-child {
+    min-width: 0;
+    padding-inline-start: 0;
+}
+.chatkit-preview td:last-child {
+    min-width: 0;
+    padding-inline-end: 0;
+}
+.chatkit-preview tr:last-child > td {
+    border-bottom: 0;
+}
+
+/* Media and separators */
+.chatkit-preview img {
+    display: block;
+    height: auto;
+    margin: 0;
+    border: 0;
+    border-radius: 0.5rem;
+}
+.chatkit-preview iframe {
+    display: block;
+    width: 100%;
+    border: 0;
+    border-radius: 0.5rem;
+    background: var(--bg);
+}
+.chatkit-preview hr {
+    align-self: stretch;
+    height: 1px;
+    margin: 0.5rem 0;
+    border: 0;
+    background: var(--border);
+}
+.chatkit-preview .chatkit-row > hr {
+    width: 1px;
+    height: auto;
+    margin: 0 0.5rem;
+}
+
+/* ======================== END CHATKIT ================================== */

@@ -15,7 +15,7 @@ test("registers draft status and renders chatkit HTML", () => {
     const result = blocks[0].render({ source, helpers: { escapeHTML } })
     assert.equal(result.className, "chatkit-preview")
     assert.ok(!result.html.includes("ChatKit preview"))
-    assert.ok(result.html.includes("<div><div>Content &amp; more</div></div>"))
+    assert.equal(result.html, '<div class="chatkit-box"><div class="chatkit-row">Content &amp; more</div></div>')
     assert.ok(!result.html.includes("Preview renderer coming soon"))
     assert.ok(!result.html.includes("<pre>"))
 })
